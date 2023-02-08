@@ -1,1 +1,763 @@
-index.html
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>股票健診</title>
+    <meta http-equiv="Content-Type" content="html;" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta
+      name="keywords"
+      content="股票投資,台股分析,個股趨勢,選股,飆股,股市,股價,基金"
+    />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="static/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/tp.css" />
+    <style type="text/css">
+      .layui-layer-hui .layui-layer-content {
+        padding: 24px 32px !important;
+      }
+
+      .layui-layer-dialog .layui-layer-content {
+        font-size: 36px !important;
+        line-height: 40px !important;
+      }
+      .cbtn {
+        line-height: 0.7rem;
+        border-radius: 10px;
+        border-bottom: 2px solid #b13131;
+        font-size: 28px;
+        text-align: center;
+        color: #fff;
+        background: #20c92f;
+        font-weight: bold;
+        cursor: pointer;
+        width: 560px;
+        height: 63px;
+        margin: 20px auto 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      .tableTr {
+        cursor: pointer;
+        text-align: center;
+      }
+    </style>
+    <script src="static/js/jquery-1.8.3.min.js"></script>
+    <script src="static/js/layer.min.js"></script>
+  </head>
+  <body>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-10942022518"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-10942022518");
+    </script>
+    <!-- Event snippet for MCC10.7 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      //
+      function gtag_report_conversion(url) {
+        // var callback = function () {
+        //   if (typeof url != "undefined") {
+        //     window.location = url;
+        //   }
+        // };
+        // gtag("event", "conversion", {
+        //   send_to: "AW-10942022518/aVYpCMqPuOQDEPaGyOEo",
+        //   event_callback: callback,
+        // });
+        // return false;
+      }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-141664637-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-141664637-2");
+    </script>
+    <span style="display: none" id="tcode"></span>
+    <!-- 彈窗開始-->
+    <div class="tan_div box_bg80" id="SonContent0">
+      <div
+        class="tan_content tan_400"
+        style="background-color: rgb(255, 255, 255); border-radius: 0px"
+      >
+        <div class="tan_close">
+          <a href="javascript:void(0)" onclick="hideiframe()"></a>
+        </div>
+        <div class="tan_title" style="padding-bottom: 20px">
+          <span
+            class="discuss"
+            style="display: inline-block; padding: 24px 24px 56px"
+            >正在通過事件驅動策略模型...</span
+          >
+          <div class="barbox">
+            <div class="barline">
+              <div style="width: 0px" class="charts"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tan_padding" id="inputQQ" style="display: none">
+          <div class="Land_li_input center">
+            <input id="stock" type="hidden" name="stock" value="111111" />
+          </div>
+          <div class="land_btn center">
+            <input id="btn9" name="" type="button" value="" />
+          </div>
+          <div
+            class="center"
+            style="
+              color: #666;
+              font-size: 24px;
+              margin-top: 12px;
+              margin-bottom: 24px;
+            "
+          >
+            鄭重承諾：絕不泄露您的個人信息
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 彈窗結束-->
+
+    <div class="dialog4">
+      <div class="circle4"></div>
+      <div
+        class="result center btnBg"
+        style="
+          background: none;
+          margin-top: 0;
+          line-height: 50px;
+          height: auto;
+          padding-top: 46px;
+        "
+        id="btn05"
+      >
+        <span
+          class="cName tcodeName"
+          style="
+            display: block;
+            color: #2e3b88;
+            margin-bottom: 5px;
+            font-size: 59px;
+          "
+        ></span>
+      </div>
+      <div class="promise center" style="margin: 130px auto 0"></div>
+      <a class="tttlink" href="#"
+        ><div
+          class="cbtn"
+          data-name="popupSureBtn"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #32af40;
+          "
+        >
+          <img
+            style="height: 40px; margin-right: 5px"
+            src="static/picture/line2.jpg"
+          /><span>添加line獲取診股報告</span>
+        </div></a
+      >
+      <div class="promise center">鄭重承諾：絕不泄露用戶的個人信息</div>
+    </div>
+    <div class="zhegai"></div>
+
+    <!--頭部-->
+    <div class="main" style="padding-bottom: 0">
+      <div class="window">
+        <div class="cancel"></div>
+        <div class="gpName"></div>
+        <div class="icon"></div>
+        <div class="bot">
+          <input
+            type="tel"
+            maxlength="11"
+            class="phoneInput"
+            placeholder="請留下您的聯系方式"
+          />
+          <div class="submit"></div>
+        </div>
+      </div>
+      <div class="roll"></div>
+      <div class="content">
+        <div class="lwtop">
+          <div class="lvtt">
+            <img class="bk" src="static/picture/lw_t_yk.png" />
+            <span class="num"><img src="static/picture/lw_t_q.png" /></span>
+            <img src="static/picture/sx.png" class="sx" />
+            <div class="bt">
+              <img src="static/picture/lw_t_bt.png" />
+              <div class="top-code-name">
+                <span class="tcn-s1">深度挖掘</span>
+                <span class="tcn-s2 tcodeName"></span>
+                <span class="tcn-s1">背後的玄機</span>
+              </div>
+            </div>
+            <i><code>62</code>%</i>
+          </div>
+          <div class="searchBg">
+            <input
+              type="text"
+              id="gupiao"
+              placeholder="輸入股票名稱/代號"
+              maxlength="4"
+              name="stockcode1"
+              class="searchInput"
+              autocomplete="off"
+            />
+            <div class="searchBtn zhenduan" id="btnBgcs"></div>
+            <div
+              style="
+                width: 700px;
+                height: 150px;
+                font-size: 24px;
+                position: absolute;
+                top: 81px;
+                left: 0px;
+                z-index: 999999;
+                display: none;
+              "
+              id="instr"
+            >
+              <table style="background: #efefef; width: 100%; height: auto">
+                <thead>
+                  <tr style="text-align: center">
+                    <td>股票代號</td>
+                    <td>股票名稱</td>
+                  </tr>
+                </thead>
+                <tbody id="codelist">
+                  <tr
+                    id="1109"
+                    data-code="1109"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>109</td>
+                    <td>信大</td>
+                  </tr>
+                  <tr
+                    id="1108"
+                    data-code="1108"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>108</td>
+                    <td>幸福</td>
+                  </tr>
+                  <tr
+                    id="1104"
+                    data-code="1104"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>104</td>
+                    <td>環泥</td>
+                  </tr>
+                  <tr
+                    id="1103"
+                    data-code="1103"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>103</td>
+                    <td>嘉泥</td>
+                  </tr>
+                  <tr
+                    id="1102"
+                    data-code="1102"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>102</td>
+                    <td>亞泥</td>
+                  </tr>
+                  <tr
+                    id="1101"
+                    data-code="1101"
+                    class="gets"
+                    style="cursor: pointer; text-align: center"
+                  >
+                    <td><span style="color: red">1</span>101</td>
+                    <td>台泥</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="bottom">稍後會有工作人員聯系您！</div> -->
+          </div>
+        </div>
+
+        <div class="head">
+          <div class="tit"><img src="static/picture/tit_02.png" /></div>
+        </div>
+        <div class="lwc2">
+          <div class="btnBox-bg" style="padding-top: 30px">
+            <div
+              class="zhenduan btnBg center pulse animated infinite"
+              id="btnBgcs5"
+            >
+              點擊查看
+              <div style="display: inline; color: #f00" class="cname tcodeName">
+                持有股票
+              </div>
+              <div style="display: inline" class="month"></div>
+              月
+              <div style="display: inline" class="day"></div>
+              日預測報告
+            </div>
+            <div style="text-align: right; color: #fff">
+              預測結果僅供參考，請以真實開盤為準&nbsp;&nbsp;
+            </div>
+          </div>
+          <div class="lwc21">
+            <a class="btn_sz pulse animated infinite"></a>
+          </div>
+          <div class="lwc23">
+            <div class="lc23">
+              <h5 class="btnBg" style="background: none">
+                <span class="cc"></span>&nbsp;<span class="gCode"></span>
+              </h5>
+              <p class="p1"></p>
+              <div class="txtScroll-top">
+                <div class="bd">
+                  <div
+                    class="tempWrap"
+                    style="overflow: hidden; position: relative; height: 117px"
+                  >
+                    <div
+                      class="tempWrap"
+                      style="
+                        overflow: hidden;
+                        position: relative;
+                        height: 117px;
+                      "
+                    >
+                      <ul
+                        class="infoList"
+                        style="
+                          top: -41.3049px;
+                          position: relative;
+                          padding: 0px;
+                          margin: 0px;
+                        "
+                      >
+                        <li style="height: 24px">
+                          <font class="date1">2**6</font>有機會賺取匯差
+                          可期待明年殖利率
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">9**2</font>突破三角收斂 可右側進場
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">1**6</font
+                          >股價偏低可逢低佈局分批進場
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">2**1</font>法人持續賣超
+                          重新開始偏空操作
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">1**2</font>不建議操作
+                          需要觀望到頂情況
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">4**2 </font>沒有止跌回升的跡象
+                          再佈局找進場
+                        </li>
+                        <li style="height: 24px">
+                          <font class="date1">2**8</font>現在價位都可進場做多
+                          止損**元
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script src="static/js/jquery.superslide.2.1.1.js"></script>
+              <script type="text/javascript">
+                jQuery(".txtScroll-top").slide({
+                  titCell: ".hd ul",
+                  mainCell: ".bd ul",
+                  autoPage: true,
+                  effect: "top",
+                  autoPlay: true,
+                  vis: 3,
+                });
+              </script>
+              <p></p>
+              <div class="yuce">
+                <div class="btnBg zhenduan center lingqu">
+                  立即領取<span
+                    style="color: #dc3825; font-weight: bold"
+                    class="tcodeName"
+                  ></span
+                  >測評結果
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lc24">
+            <div class="lc24-box">
+              <p>您的股票是漲是跌？</p>
+              <input
+                type="tel"
+                class="gpdm2 input_text"
+                id="gupiao2"
+                placeholder="請輸入股票代號"
+                maxlength="6"
+                name="stockcode2"
+                autocomplete="off"
+              />
+              <a class="zd_btn3 zhenduan bold center pulse" id="btnBgcs2"
+                >立即診股</a
+              >
+              <div
+                style="
+                  display: none;
+                  width: 700px;
+                  height: 150px;
+                  background: nThree;
+                  font-size: 24px;
+                  position: absolute;
+                  bottom: -35px;
+                  left: 0px;
+                  z-index: 999999;
+                "
+                id="instr2"
+              >
+                <table style="background: #efefef; width: 100%; height: auto">
+                  <thead>
+                    <tr style="text-align: center">
+                      <td>股票代號</td>
+                      <td>股票名稱</td>
+                    </tr>
+                  </thead>
+                  <tbody id="codelist2">
+                    <tr style="cursor: pointer; text-align: center"></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <p>經幃有限公司</p>
+          <p>地址：臺中市南區和平里忠明南路758號17樓</p>
+        </div>
+      </div>
+    </div>
+    <div class="tc-bg">
+      <div class="tc">
+        <h3><span></span>測評結果已計算完成</h3>
+        <p>
+          證監會規定，實時操作建議不能在網絡上<br />公開展示，我們將通過短信發送至您手機
+        </p>
+        <input
+          class="dialog4_input center mobile2"
+          name="zgMobile"
+          placeholder="請輸入接收短信手機號碼"
+          maxlength="11"
+          type="tel"
+        />
+        <div class="dialog4_btn center bold jt_btn0092" id="zgSureBtn2"></div>
+        <div class="promise center">鄭重承諾：絕不泄露用戶的個人信息</div>
+        <a class="cloes"></a>
+      </div>
+      <input value="585" id="gid" name="gid" type="hidden" />
+      <input value="436" id="aid" name="aid" type="hidden" />
+      <input value="1" id="pid" name="pid" type="hidden" />
+      <input value="121" id="channelid" name="channelid" type="hidden" />
+    </div>
+
+    <div class="bottom_bTTTT" style="display: none">
+      <div class="bottom-code-name">
+        <span class="bcn-s1" style="font-size: 48px">免費健診股票</span>
+      </div>
+      <div class="bottom-input">
+        <div class="bottom-input-box">
+          <input
+            type="tel"
+            class="gpdm2 input_text"
+            id="gupiao22"
+            placeholder="請輸入持有股票代號/名稱"
+            maxlength="6"
+            name="stockcode22"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <a id="btnBgcs3">
+        <div class="btnBg center pulse animated infinite">
+          點擊查看
+          <div style="display: inline; color: #f00">持有股票</div>
+          短線機會
+        </div>
+      </a>
+      <div
+        style="
+          display: none;
+          position: absolute;
+          width: 700px;
+          height: 150px;
+          background: nThree;
+          font-size: 24px;
+          bottom: 200px;
+          z-index: 999999;
+          left: 50%;
+          margin-left: -350px;
+        "
+        id="instr22"
+      >
+        <table
+          style="
+            background: #efefef;
+            width: 100%;
+            height: auto;
+            position: fixed;
+            bottom: 200px;
+            width: 700px;
+            left: 50%;
+            margin-left: -350px;
+          "
+        >
+          <thead>
+            <tr style="text-align: center">
+              <td>股票代號</td>
+              <td>股票名稱</td>
+            </tr>
+          </thead>
+          <tbody id="codelist22">
+            <tr style="cursor: pointer; text-align: center"></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="display: none">
+      <img
+        class="arrowImg"
+        src="static/picture/arrow.png"
+        width="0"
+        height="0"
+      />
+      <img
+        class="arrowdownImg"
+        src="static/picture/arrowdown.png"
+        width="0"
+        height="0"
+      />
+    </div>
+    <div class="noVal">請輸入正確的股票代號/名稱</div>
+    <!-- 股票Stock code name -->
+    <script src="static/js/data-code.js"></script>
+    <!-- <script src="static/js/code-role.js"></script> -->
+    <!---<script src="static/js/index.js?1"></script>--->
+
+    <script>
+      var date = new Date();
+      var m = date.getMonth() + 1;
+      var d = date.getDate();
+      $(".month").text(m);
+      $(".day").text(d);
+
+      // $(function(){
+      // $(window).scroll(function () {
+      // var documentTop = $(document).scrollTop();
+      // var windowHeight = $(window).height();
+      // var documentHeight = $(document).height();
+      // if ($(document).scrollTop() > 400) {
+      // $(".bottom_b").css('display','block');
+      // }
+      // else{
+      // $(".bottom_b").css('display','none');
+      // }
+
+      // });
+      // })
+      // 彈窗 定時器
+      let timeId = "";
+      function dialogNoval() {
+        $(".noVal").css("display", "block");
+        if (!timeId) {
+          timeId = setTimeout(() => {
+            $(".noVal").css("display", "none");
+            timeId = "";
+            clearTimeout(timeId);
+          }, 3000);
+        }
+      }
+      // 右上角 code標簽 數字
+      let str = "";
+      setInterval(() => {
+        str = Math.floor(Math.random() * 99) + 1;
+        $("code").text(str);
+      }, 2000);
+      let htmlStr = "";
+      let iptVal = ""; // 上方輸入股票名稱/代號輸入框
+      let codeArr = ""; //過濾數組
+      $("#gupiao").on("input", () => {
+        htmlStr = "";
+        iptVal = $("#gupiao").val();
+        //輸入框 改變 有值顯示 無值隱藏
+        if (iptVal) {
+          $("#instr").css("display", "");
+        } else {
+          //
+          $("#instr").css("display", "none");
+        }
+        let leng = iptVal.length;
+        // 輸入過濾出數組
+        codeArr = s
+          .filter((v) => {
+            return (
+              v.c.substring(0, leng) == iptVal ||
+              v.n.substring(0, leng) == iptVal
+            );
+          })
+          .slice(0, 6);
+        codeArr.forEach((v) => {
+          htmlStr += `<tr
+                    id="${v.c}"
+                    data-code="${v.c}"
+                    class="gets tableTr"
+                  >
+                    <td><span style="color: red"></span>${v.c}</td>
+                    <td>${v.n}</td>
+                  </tr>`;
+        });
+        $("#codelist").html(htmlStr);
+      });
+
+      $("#codelist").on("click", ".tableTr", function (e) {
+        let tdname = $(this).find("td").eq(1).text();
+        $("#gupiao").val(tdname);
+        $("#gupiao2").val(tdname);
+        $(".tcodeName").text(tdname);
+        $("#instr").css("display", "none");
+      });
+      //檢查代碼是否正確
+      function codeTorF() {
+        iptVal = $("#gupiao").val();
+        iptvalue = $("#gupiao2").val();
+        let val = iptVal || iptvalue;
+        let aaa = codeArr.some((v) => {
+          return v.c == val || v.n == val;
+        });
+        return aaa;
+      }
+      // 點擊診斷 獲取檢測結果
+      $(".zhenduan").each(function () {
+        iptVal = $("#gupiao").val();
+        iptvalue = $("#gupiao2").val();
+        $(this).click(() => {
+          // let id = $(this)[0].id;
+          //無值 彈窗
+          if (!iptVal && !iptvalue) {
+            console.log(1);
+            dialogNoval();
+          } else {
+            console.log(codeTorF());
+            // 當前輸入的股票代碼不正確
+            if (!codeTorF()) {
+              dialogNoval();
+            } else {
+              $(".dialog4").css("display", "block");
+              $(".zhegai").css("display", "block");
+            }
+          }
+        });
+      });
+      // 關閉彈窗
+      $(".circle4").click(() => {
+        $(".dialog4").css("display", "none");
+        $(".zhegai").css("display", "none");
+      });
+      $("#gupiao2").on("input", () => {
+        html2 = "";
+        iptvalue = $("#gupiao2").val();
+        //輸入框 改變 有值顯示 無值隱藏
+        if (iptvalue) {
+          $("#instr2").css("display", "");
+        } else {
+          //
+          $("#instr2").css("display", "none");
+        }
+        let leng = iptvalue.length;
+        // 輸入過濾出數組
+        codeArr = s
+          .filter((v) => {
+            return (
+              v.c.substring(0, leng) == iptvalue ||
+              v.n.substring(0, leng) == iptvalue
+            );
+          })
+          .slice(0, 6);
+        codeArr.forEach((v) => {
+          html2 += `<tr
+                    id="${v.c}"
+                    data-code="${v.c}"
+                    class="gets tableTr"
+                  >
+                    <td><span style="color: red"></span>${v.c}</td>
+                    <td>${v.n}</td>
+                  </tr>`;
+        });
+        $("#codelist2").html(html2);
+      });
+      // 底部表格行點擊
+      $("#codelist2").on("click", ".tableTr", function (e) {
+        let tdname = $(this).find("td").eq(1).text();
+        $("#gupiao2").val(tdname);
+        $("#gupiao").val(tdname);
+        $(".tcodeName").text(tdname);
+        $("#instr2").css("display", "none");
+      });
+    </script>
+    <script>
+      // 页面加载完毕后的事件
+      window.addEventListener("DOMContentLoaded", function (event) {
+        // 遍历类名添加点击事件
+        document.querySelectorAll(".tttlink").forEach(function (e) {
+          e.addEventListener("click", function (e) {
+            gtag_report_conversion();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
